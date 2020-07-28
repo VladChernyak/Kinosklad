@@ -1,0 +1,164 @@
+.movie-info {
+    padding-left: 35px;
+    padding-right: 35px;
+    position: relative;
+    z-index: 20;
+    h2 {
+        margin-bottom: 40px;
+        font-size: 25px;
+        font-weight: 300;
+        color: #fff;
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        &-row {
+            max-width: 850px;
+            width: 100%;
+        }
+    }
+    &__starring-list {
+        display: flex;
+    }
+    &__no-such-info {
+        font-size: 14px;
+        color: rgb(114, 114, 114);
+        padding-left: 10px;
+    }
+    &__actor {
+        width: 150px;
+        &:not(:last-child) {
+            margin-right: 25px;
+        }
+        &-photo {
+            width: 100%;
+            border-radius: 15px;
+        }
+        &-info {
+            color: #fff;
+            text-align: center;
+        }
+        &-name {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        &-role {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+    }
+    &__simular-movies {
+        width: 350px;
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &__simular-movie {
+        width: 150px;
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+            linear-gradient(to top, #000, transparent 70%);
+        }
+        &-poster {
+            width: 100%;
+            height: 100%;
+        }
+        &-name {
+            position: absolute;
+            bottom: 20px;
+            left: 20px; 
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            z-index: 10;
+        }
+    }
+    &__trailer {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        &-video {
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+    }
+}
+
+@media (max-width: 1320px) {
+    .movie-info {
+        &__content {
+            flex-direction: column;
+        }
+        &__starring {
+            &-list {
+                flex-wrap: wrap;
+            }
+        }
+        &__actor {
+            margin-bottom: 20px;
+        }
+        &__simular-movies {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    .movie-info {
+        &__starring {
+            &-list {
+                justify-content: center;
+            }
+        }
+        &__trailer {
+            &-video {
+                height: 350px;
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .movie-info {
+        &__actor,
+        &__simular-movie {
+            width: 130px;
+        }
+        &__actor-photo {
+            border-radius: 10px;
+        }
+        &__simular-movies-list {
+            justify-content: center;
+        }
+        &__simular-movie {
+            border-radius: 10px;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .movie-info {
+        margin-top: 0;
+        &__actor,
+        &__simular-movie {
+            width: 100px;
+        }
+        &__trailer {
+            &-video {
+                height: 250px;
+            }
+        }
+    }
+}

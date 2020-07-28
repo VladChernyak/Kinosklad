@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Киносклад - Список фильмов</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="header__inner">
+                <div class="container">
+                    <div class="header__content">
+                        <div class="header__logo logo">
+                            <span class = 'js-logo'>Киносклад</span>
+                        </div>
+                        <nav class="header__nav">
+                            <a class="header__nav-link js-home-link" href="./">Главная</a>
+                            <a class="header__nav-link js-discover-link current" href='./discover.html'>Все фильмы</a>
+                        </nav>
+                        <select name="lang" class="header__lang-switch lang-switch js-lang-switch">
+                        </select>
+                        <button class="header__burger js-header__burger">
+                        <div class="header__burger_line"></div>
+                        <div class="header__burger_line"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.header -->
+        <main class="discover-page">
+            <header class="discover-header">
+                <div class="container">
+                    <div class="discover-header__content">
+                        <div class="discover-header__search js-discover-header__search">
+                            <i class="search-icon fas fa-search"></i>
+                            <input class="js-discover-header__search-input" type="text" placeholder="Введите название фильма">
+                        </div>
+                        <div class="discover-header__controls">
+                            <button class="discover-header__show-filters js-discover-header__show-filters">Фильтры</button>
+                            <select name="" id="" class="discover-header__sort-by js-discover-header__sort-by">
+                                <option class="js-discover-header__sort-by_popularity" 
+                                value="&sort_by=popularity.desc">По пулярности</option>
+                                <option class="js-discover-header__sort-by_rating" 
+                                value="&sort_by=vote_average.desc&vote_count.gte=500">По рейтингу</option>
+                                <option class="js-discover-header__sort-by_novelty" 
+                                value="&sort_by=primary_release_date.desc">По новизне</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- /.discover-header -->
+            <section class="discover-movies">
+                <aside class="discover-movies__filters js-discover-movies__filters">
+                    <ul class="discover-movies__filters-list">
+                        <li class="discover-movies__filters-list-item">
+                            <h3 class="js-discover-movies__filters-genres-title">Жанры:</h3>
+                            <ul class="movie-genres js-movie-genres">
+                            </ul>
+                        </li>
+                        <li class="discover-movies__filters-list-item">
+                            <h3 class="js-discover-movies__filters-year-title">Год выхода:</h3>
+                            <div class="movie-year js-movie-year">
+                                <output>?</output>
+                                <input type="range">
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="./discover.html?" class="discover-movies__filters-submit-button js-discover-movies__filters-submit-button">Применить</a>
+                </aside>
+                <div class="discover-movies__list">
+                    <a class="discover-movies__list-item movie-card">
+                        <div class="movie-card__poster">
+                            <img src="./img/1RmUfX3LcS897GhUWrWp5nRADo4.jpg" alt="">
+                            <span class="movie-card__vote-average-value">6.7</span>
+                        </div>
+                        <div class="movie-card__description">
+                            <div class="movie-card__short-info">
+                                <span class="movie-card__release-year">1972</span>
+                                  / 
+                                 <span class="movie-card__genres">Драма, комедия</span>
+                            </div>
+                            <span class="movie-card__title">Кабаре</span>
+                        </div>
+                    </a>
+                    <!-- /.movie-card -->
+                </div>
+            </section>
+            <!-- /.discover-movies -->
+            <div class="discover-page__pagination pagination">
+                <div class="pagination__left-side">
+                </div>
+                <span class="pagination__dots">...</span>
+                <div class="pagination__right-side">
+                </div>
+            </div>
+        </main>
+        <!-- /.discover-page -->
+        <div class="loader">
+            <div class="loader__circle"></div>
+        </div>
+    </div>
+    <!-- /.page-wrapper -->
+    <script src="https://kit.fontawesome.com/6080e3d30d.js" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

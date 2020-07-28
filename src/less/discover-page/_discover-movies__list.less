@@ -1,0 +1,86 @@
+@import './../_variables.less';
+
+.discover-movies__list {
+    position: relative;
+    display: grid;
+    width: 100%;
+    // max-width: 1420px;
+    min-height: 450px;
+    padding-left: 25px;
+    padding-right: 25px;
+    grid-template-columns: repeat(auto-fit, 240px);
+    grid-gap: 55px 40px;
+    justify-content: center;
+    .movie-card {
+        &__poster {
+            position: relative;
+            img {
+                width: 100%;
+                min-height: 100%;
+                border-radius: 15px;
+            }
+        }
+        &__vote-average-value {
+            position: absolute;
+            width: 2.2em;
+            bottom: -3px;
+            right: -7px;
+            background-color: #fec72a;
+            color: #000;
+            text-align: center;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 1px 8px;
+        }
+        &__description {
+            margin-top: 15px;
+        }
+        &__short-info {
+            color: @green;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        &__title {
+            font-size: 18px;
+            color: #fff;
+        }
+    }
+    &_no-such-results {
+        font-size: 25px;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 769px) {
+    .discover-header {
+        margin-top: 50px;
+    }
+    .discover-movies__list {
+        grid-template-columns: repeat(auto-fit, 150px);
+        padding-left: 0;
+        padding-right: 0;
+        .movie-card {
+            &__image img {
+                border-radius: 10px;
+            }
+            &__short-info {
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    .discover-movies__list {
+        grid-template-columns: repeat(auto-fit, 130px);
+        .movie-card {
+            &__vote-average-value {
+                font-size: 14px;
+            }
+        }
+    }
+}

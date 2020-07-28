@@ -1,0 +1,29 @@
+@import './_variables.less';
+
+.pagination {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__button {
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid @pink;
+        border-radius: 50%;
+        color: @pink;
+        transition: .3s;
+        &.current {
+            background: @pink-gradient;
+            color: #fff;
+        }
+    }
+    &__dots {
+        color: @pink;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

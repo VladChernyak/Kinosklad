@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="movie-page-wrapper page-wrapper">
+        <section class="movie-preview">
+            <div class="movie-preview__content">
+                <header class="top-panel">
+                    <a href="./" class="back-icon"><i class="fas fa-home"></i></a>
+                    <select name="lang" class="header__lang-switch lang-switch js-lang-switch">
+                    </select>
+                </header>
+                <div class="movie-description">
+                    <h1 class="movie-description__name js-movie-description__name"></h1>
+                    <p class="movie-description__overview js-movie-description__overview"></p>
+                    <div class="movie-description__runtime">
+                        <span class="movie-description__runtime-value js-movie-description__runtime-value"></span> 
+                        <span class="movie-description__runtime-minutes js-movie-description__runtime-minutes"></span>
+                    </div>
+                    <span class="movie-description__release-year js-movie-description__release-year"></span> 
+                    <span class="movie-description__genres js-movie-description__genres"></span>
+                    <div class="movie-description__vote">
+                        <div class="fire-icon"><i class="fas fa-fire"></i></div>
+                        <span class="movie-description__vote-average js-movie-description__vote-average"></span>
+                        <sup class="movie-description__vote-max">/ 10</sup>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="movie-info">
+            <div class="movie-info__content">
+                <div class="movie-info__content-row">
+                    <div class="movie-info__starring">
+                        <h2 class="js-movie-info__starring-title">В главных ролях:</h2>
+                        <div class="movie-info__starring-list js-movie-info__starring-list">
+                            <span class="movie-info__no-such-info">Нет информации</span>
+                        </div>
+                    </div>
+                    <!-- /.movie-info__starring -->
+                    <div class="movie-info__trailer">
+                        <h2 class="js-movie-info__trailer-title">Трейлер к фильму:</h2>
+                        <div class="movie-info__trailer-video js-movie-info__trailer-video">
+                            <span class="movie-info__no-such-info">Нет информации</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.movie-info__content-row -->
+                <aside class="movie-info__simular-movies">
+                    <h2 class="js-movie-info__simular-movies-title">Похожие фильмы:</h2>
+                    <div class="movie-info__simular-movies-list js-movie-info__simular-movies-list">
+                        <span class="movie-info__no-such-info">Нет информации</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+        <!-- /.movie-preview -->
+    </div>
+    <!-- /.page-wrapper -->
+    <div class="loader">
+        <div class="loader__circle"></div>
+    </div>
+    <script src="https://kit.fontawesome.com/6080e3d30d.js" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+@import './_variables.less';
+
+.header {
+    height: 100px;
+    z-index: 20;
+    &__inner {
+        overflow: hidden;
+        height: 100px;
+        transition: .2s;
+    }
+    .container {
+        height: 100px;
+    }
+    &__content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    &__logo {
+        font-family:'Caveat', cursive;
+        font-size: 30px;
+        color: #fff;
+        z-index: 5;
+    }
+    &__nav-link {
+        color: #fff;
+        position: relative;
+        opacity: .7;
+        &:not(:first-child) {
+            margin-left: 50px;
+        }
+        &.current {
+            opacity: 1;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 55px;
+                left: 50%;
+                width: 100%;
+                height: 4px;
+                border-radius: 5px;
+                transform: translateX(-50%);
+                box-shadow: 0 -2px 8px -1px #f46371;
+                background: @pink-gradient;
+            }
+        }
+    }
+    &__burger {
+        background: none;
+        border: none;
+        outline: none;
+        width: 25px;
+        height: 25px;
+        margin-right: 15px;
+        display: none;
+        z-index: 5;
+        &_line {
+            width: 25px;
+            height: 1px;
+            background-color: #fff;
+            transition: .2s;
+            &:last-child {
+                margin-top: 5px;
+            }
+        }
+    }
+    &.opened {
+        position: relative;
+        .header__inner {
+            height: 140px;
+        }
+        .header__burger {
+        position: relative;
+        .header__burger_line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            &:first-child {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+            &:last-child {
+                transform: translate(-50%, -50%) rotate(45deg);
+                margin-top: 0;
+            }
+        }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        &__inner {
+            position: absolute;
+            width: 100%;
+            background: @page-gradient-color;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                background: @page-gradient-color;
+            }
+        }
+        &__nav {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+        }
+        &__lang-switch {
+            position: absolute;
+            margin-right: 0;
+            bottom: 10px;
+            right: 20px;
+        }
+        &__burger {
+            display: block;
+        }
+    }
+}

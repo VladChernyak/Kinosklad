@@ -1,0 +1,125 @@
+@import './../_variables.less';
+
+.home-page-discover {
+    margin-top: 160px;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 50px;
+        color: #fff;
+    }
+    &__title {
+        font-style: 24px;
+    }
+    &__nav {
+        position: relative;
+        button {
+            border: none;
+            background: none;
+            outline: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #fff;
+            opacity: .7;
+            cursor: pointer;
+            &:not(:first-child) {
+                margin-left: 70px;
+            }
+            &.current {
+                opacity: 1;
+            }
+        }
+        &-underline {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            height: 4px;
+            border-radius: 5px;
+            box-shadow: 0 -2px 8px -1px #f46371;
+            background: @pink-gradient;
+            transition: all .4s;
+        }
+    }
+    &__search {
+        padding-left: 30px;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        .search-icon {
+            opacity: .7;
+            margin-right: 20px;
+        }
+        input {
+            border: none;
+            background: none;
+            outline: none;
+            font-family: 'Roboto', sans-serif;
+            opacity: .7;
+            color: #fff;
+            &::placeholder {
+                color: #fff;
+            }
+        }
+    }
+    .discover-movies {
+        display: block;
+        margin-top: 55px;
+        padding-top: 59px;
+        padding-bottom: 55px;
+        background: @discover-movies-gradient;
+        border-radius: 25px;
+        &__list {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    &__discover-more {
+        text-decoration: none;
+        width: 11em;
+        margin-top: 80px;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        font-size: 18px;
+        color: #fff;
+        border-radius: 35px;
+        background: @pink-gradient;
+        box-shadow: 0 0 10px -1px @pink;
+        transition: all .3s;
+        &:hover {
+            box-shadow: 0 0 15px 0 @pink;
+        }
+    }
+}
+
+@media (max-width: 426px) {
+    .discover-movies .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 769px) {
+    .home-page-discover {
+        margin-top: 20px;
+        &__header {
+            flex-direction: column;
+        }
+        &__nav {
+            margin-top: 30px;
+        }
+        &__search {
+            align-self: center;
+            margin-top: 50px;
+            border: none;
+        }
+        &__content {
+            margin-top: 30px;
+        }
+    }
+}

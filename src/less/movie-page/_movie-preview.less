@@ -1,0 +1,134 @@
+@import './../_variables.less';
+
+.movie-preview {
+    position: relative;
+    min-height: 800px;
+    background-image: url('../img/star-wars.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+        linear-gradient(to right, @page-background, transparent 90%),
+        linear-gradient(to top, @page-background, transparent 90%),
+        linear-gradient(to left, @page-background, transparent 90%);
+
+    }
+    &__content {
+        position: relative;
+        padding-left: 35px;
+        padding-right: 35px;
+        z-index: 10;
+    }
+    .top-panel {
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        .back-icon {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 20px;
+        }
+    }
+    .movie-description {
+        margin-top: 150px;
+        color: #fff;
+        &__name {
+            max-width: 100%;
+            font-weight: 700;
+            font-size: 50px;
+        }
+        &__overview {
+            margin-top: 25px;
+            max-width: 700px;
+            line-height: 1.5em;
+            font-weight: 300;
+        }
+        &__runtime {
+            background: @pink-gradient;
+            min-width: 40px;
+            max-width: 90px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            padding: .3em;
+            text-align: center;
+            border-radius: 15px;
+        }
+        &__release-year {
+            vertical-align: middle;
+            &::after {
+                content: '';
+                width: 5px;
+                height: 5px;
+                margin-left: 10px;
+                margin-right: 10px;
+                display: inline-block;
+                border-radius: 50%;
+                background-color: #fff;
+                vertical-align: middle;
+            }
+        }
+        &__vote {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            .fire-icon {
+                width: 35px;
+                height: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+                color: @pink;
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                border-radius: 50%;
+            }
+            &-average {
+                font-size: 35px;
+                color: @pink;
+                margin-left: 15px;
+            }
+            &-max {
+                line-height: 35px;
+                margin-left: 10px;
+                margin-bottom: 1em;
+            }
+        }
+    }
+}
+
+@media(max-width: 426px) {
+    .movie-preview {
+        .movie-description {
+            margin-top: 100px;
+            &__name {
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+@media(max-width: 376px) {
+    .movie-preview {
+        .movie-description {
+            &__overview {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media(max-width: 321px) {
+    .movie-preview {
+        .movie-description {
+            &__name {
+                font-size: 30px;
+            }
+        }
+    }
+}
